@@ -852,21 +852,50 @@ footer {
     }
 }
 
-@media (max-width: 768px) {
-    .hero-content,
-    .features-grid,
-    .benefits-grid,
-    .subscription-grid {
-        grid-template-columns: 1fr;
+@media (max-width: 992px) {
+    /* Ajustes para el header */
+    header {
+        padding: 15px 0;
     }
-
-    .hero-text,
-    .hero-image {
-        padding: 0;
-        margin-bottom: 30px;
+    
+    nav.container {
+        position: relative;
     }
-
+    
+    .nav-toggle-label {
+        display: block;
+        position: absolute;
+        right: 20px;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 2;
+    }
+    
     .nav-links {
-        display: none;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        left: 0;
+        background-color: var(--primary);
+        flex-direction: column;
+        align-items: center;
+        padding: 0;
+        margin: 0;
+        height: 0;
+        overflow: hidden;
+        transition: height 0.3s ease;
+        z-index: 1000;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    }
+    
+    .nav-toggle:checked ~ .nav-links {
+        height: auto;
+        padding: 20px 0;
+    }
+    
+    .nav-links li {
+        margin: 15px 0;
+        width: 100%;
+        text-align: center;
     }
 }
