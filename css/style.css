@@ -76,6 +76,140 @@ nav {
     transition: color 0.3s ease;
 }
 
+/* Estilos para el logo clickable */
+.logo-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: white;
+}
+
+/* Estilos para el menú responsive */
+.nav-toggle {
+    display: none;
+}
+
+.nav-toggle-label {
+    display: none;
+    cursor: pointer;
+    font-size: 1.5rem;
+    color: white;
+}
+
+/* Media queries para responsividad */
+@media (max-width: 992px) {
+    /* Ajustes para el header */
+    header {
+        padding: 15px 0;
+    }
+    
+    nav.container {
+        position: relative;
+    }
+    
+    .nav-toggle-label {
+        display: block;
+        position: absolute;
+        right: 20px;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 2;
+    }
+    
+    .nav-links {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        left: 0;
+        background-color: var(--primary);
+        flex-direction: column;
+        align-items: center;
+        padding: 0;
+        margin: 0;
+        height: 0;
+        overflow: hidden;
+        transition: height 0.3s ease;
+        z-index: 1000;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    }
+    
+    .nav-toggle:checked ~ .nav-links {
+        height: auto;
+        padding: 20px 0;
+    }
+    
+    .nav-links li {
+        margin: 15px 0;
+        width: 100%;
+        text-align: center;
+    }
+    
+    .nav-links li a {
+        display: block;
+        padding: 10px;
+    }
+    
+    .nav-links li a.cta-button {
+        margin: 10px auto;
+        width: 80%;
+    }
+}
+
+/* Ajustes para la hero section */
+@media (max-width: 768px) {
+    .hero-content {
+        flex-direction: column;
+        text-align: center;
+        padding: 30px 0;
+    }
+    
+    .hero-text {
+        order: 1;
+        padding: 0 20px;
+        margin-bottom: 30px;
+    }
+    
+    .hero-image {
+        order: 0;
+        margin-bottom: 30px;
+    }
+    
+    .hero-text h1 {
+        font-size: 2.2rem;
+    }
+    
+    .hero-text p {
+        font-size: 1rem;
+    }
+    
+    #hero {
+        padding: 80px 0 40px;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo span {
+        font-size: 1.2rem;
+    }
+    
+    .logo img {
+        width: 30px;
+    }
+    
+    .hero-text h1 {
+        font-size: 1.8rem;
+    }
+    
+    .hero-image img {
+        max-width: 100%;
+    }
+    
+    .cta-button {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+}
+
 .nav-links a:hover {
     color: var(--accent);
 }
